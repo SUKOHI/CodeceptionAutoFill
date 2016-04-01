@@ -1,0 +1,42 @@
+<script>
+
+var codeceptionAutoFill = {
+
+	init: function() {
+
+		$(document).on('keypress', function(e){
+
+			if(e.shiftKey && e.keyCode === 13){
+
+{{ fill_js }}
+			}
+
+		});
+
+	}
+
+};
+
+if(!window.jQuery){
+
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = 'https://code.jquery.com/jquery-2.2.2.min.js';
+    script.onload = function(){
+
+    	codeceptionAutoFill.init();
+
+    }
+    document.getElementsByTagName('head')[0].appendChild(script);
+
+} else {
+
+	$(document).ready(function(){
+
+		codeceptionAutoFill.init();
+
+	});
+
+}
+
+</script>
